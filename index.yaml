@@ -89,7 +89,7 @@ jobs:
   displayName: 'Download and extract multiple tars self-hosted centos'
   pool: Centos
   steps:
-  - template: './multipleTarsExtract.yaml centos self-hosted'
+  - template: './multipleTarsExtract.yaml'
 
 # Windows-specific
 - job:
