@@ -7,7 +7,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
 - job:
-  displayName: 'Celf-hosted Centos don\'t store permissions'
+  displayName: 'Celf-hosted Centos don`t store permissions'
   pool: Centos
   steps:
   - template: './dontStorePermissions.yaml'
@@ -18,7 +18,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
 - job:
-  displayName: 'Ubuntu 16.04 don\'t store permissions'
+  displayName: 'Ubuntu 16.04 don`t store permissions'
   pool:
     vmImage: ubuntu-16.04
   steps:
@@ -30,7 +30,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
 - job:
-  displayName: 'Ubuntu 20.04 don\'t store permissions'
+  displayName: 'Ubuntu 20.04 don`t store permissions'
   pool:
     vmImage: ubuntu-20.04
   steps:
@@ -42,7 +42,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
 - job:
-  displayName: 'Macos don\'t store permissions'
+  displayName: 'Macos don`t store permissions'
   pool:
     vmImage: macos-latest
   steps:
@@ -93,18 +93,18 @@ jobs:
 
 # Windows-specific
 - job:
-  displayName: 'Windows don\'t store permissions'
+  displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
   steps:
   - template: './dontStorePermissions.yaml'
 - job:
-  displayName: 'Windows self-hosted don\'t store permissions'
+  displayName: 'Windows self-hosted don`t store permissions'
   pool: Windows
   steps:
   - template: './dontStorePermissions.yaml'
 - job:
-  displayName: 'Windows don\'t store permissions'
+  displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
   steps:
