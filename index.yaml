@@ -1,0 +1,117 @@
+jobs:
+
+# Generic jobs
+- job:
+  displayName: 'Celf-hosted Centos store permissions'
+  pool: Centos
+  steps:
+  - template: './doStorePermissions.yaml'
+- job:
+  displayName: 'Celf-hosted Centos don't store permissions'
+  pool: Centos
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Ubuntu 16.04 store permissions'
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+  - template: './doStorePermissions.yaml'
+- job:
+  displayName: 'Ubuntu 16.04 don't store permissions'
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Ubuntu 20.04 store permissions'
+  pool:
+    vmImage: ubuntu-20.04
+  steps:
+  - template: './doStorePermissions.yaml'
+- job:
+  displayName: 'Ubuntu 20.04 don't store permissions'
+  pool:
+    vmImage: ubuntu-20.04
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Macos store permissions'
+  pool:
+    vmImage: macos-latest
+  steps:
+  - template: './doStorePermissions.yaml'
+- job:
+  displayName: 'Macos don't store permissions'
+  pool:
+    vmImage: macos-latest
+  steps:
+  - template: './dontStorePermissions.yaml'
+
+# Show warnings
+- job:
+  displayName: 'Show warning if no archives were found'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './showWarning.yaml'
+- job:
+  displayName: 'Show warning if no archives were found centos self-hosted'
+  pool: Centos
+  steps:
+  - template: './showWarning.yaml'
+
+# Multiple download and extraction
+- job:
+  displayName: 'Download multiple tars'
+  pool:
+    vmImage: ubuntu-20.04
+  steps:
+  - template: './multipleTars.yaml'
+- job:
+  displayName: 'Download and extract multiple tars'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './multipleTarsExtract.yaml'
+- job:
+  displayName: 'Download multiple tars centos self-hosted'
+  pool: Centos
+  steps:
+  - template: './multipleTars.yaml'
+- job:
+  displayName: 'Download and extract multiple tars'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './multipleTarsExtract.yaml'
+- job:
+  displayName: 'Download and extract multiple tars self-hosted centos'
+  pool: Centos
+  steps:
+  - template: './multipleTarsExtract.yaml centos self-hosted'
+
+# Windows-specific
+- job:
+  displayName: 'Windows don't store permissions'
+  pool:
+    vmImage: windows-latest
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Windows self-hosted don't store permissions'
+  pool: Windows
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Windows don't store permissions'
+  pool:
+    vmImage: windows-latest
+  steps:
+  - template: './dontStorePermissions.yaml'
+- job:
+  displayName: 'Windows download specific files'
+  pool:
+    vmImage: windows-latest
+  steps:
+  - template: './specificFiles.yaml'
