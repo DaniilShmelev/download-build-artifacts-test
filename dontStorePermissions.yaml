@@ -9,7 +9,7 @@ steps:
     PathtoPublish: 'artifacts/someFile1.txt'
     ArtifactName: 'drop1'
     publishLocation: 'Container'
-    StoreAsTar: true
+    StoreAsTar: false
 - task: PublishBuildArtifactsM@1
   inputs:
     PathtoPublish: 'artifacts/someDir'
