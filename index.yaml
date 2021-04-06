@@ -115,3 +115,8 @@ jobs:
     vmImage: windows-latest
   steps:
   - template: './specificFiles.yaml'
+- job:
+  displayName: 'Windows self-hosted file share'
+  pool: Windows
+  steps:
+  - template: './filePath.yaml'

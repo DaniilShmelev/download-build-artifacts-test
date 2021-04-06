@@ -21,13 +21,11 @@ steps:
     downloadType: 'single'
     artifactName: 'drop1'
     downloadPath: 'artifacts'
-    extractTars: false
 - task: DownloadBuildArtifactsM@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
     artifactName: 'drop2'
     downloadPath: 'artifacts'
-    extractTars: false
 - bash: ls -lR artifacts
   displayName: 'File permissions after'
