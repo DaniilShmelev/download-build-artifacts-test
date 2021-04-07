@@ -6,26 +6,26 @@ steps:
 - task: PublishBuildArtifactsM@1
   inputs:
     PathtoPublish: 'artifacts/someFile1.txt'
-    ArtifactName: 'drop1'
+    ArtifactName: 'drop3'
     publishLocation: 'FilePath'
     TargetPath: 'D:/artifacts'
 - task: PublishBuildArtifactsM@1
   inputs:
     PathtoPublish: 'artifacts/someDir'
-    ArtifactName: 'drop2'
+    ArtifactName: 'drop4'
     publishLocation: 'FilePath'
     TargetPath: 'D:/artifacts'
 - task: DownloadBuildArtifactsM@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'drop1'
+    artifactName: 'drop3'
     downloadPath: 'artifacts'
 - task: DownloadBuildArtifactsM@0
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'drop2'
+    artifactName: 'drop4'
     downloadPath: 'artifacts'
 - bash: ls -lR artifacts
   displayName: 'File permissions after'
