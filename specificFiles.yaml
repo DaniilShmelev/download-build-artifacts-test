@@ -1,3 +1,9 @@
+parameters:
+- name: drop1name
+  defaultValue: drop1
+- name: drop2name
+  defaultValue: drop2
+
 steps:
 - bash: mkdir -p artifacts/someDir
 - bash: echo "some content 1" > artifacts/someFile1.txt
@@ -7,13 +13,13 @@ steps:
 - task: PublishBuildArtifactsM@1
   inputs:
     PathtoPublish: 'artifacts/someFile1.txt'
-    ArtifactName: 'drop1'
+    ArtifactName: ${{ parameters.drop1name }}
     publishLocation: 'Container'
     StoreAsTar: false
 - task: PublishBuildArtifactsM@1
   inputs:
     PathtoPublish: 'artifacts/someDir'
-    ArtifactName: 'drop2'
+    ArtifactName: ${{ parameters.drop2name }}
     publishLocation: 'Container'
     StoreAsTar: false
 - bash: ls -lR artifacts
