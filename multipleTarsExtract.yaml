@@ -1,8 +1,8 @@
 parameters:
 - name: drop1name
-  defaultValue: drop1
+  default: drop1
 - name: drop2name
-  defaultValue: drop2
+  default: drop2
 
 steps:
 - bash: mkdir -p artifacts/someDir
