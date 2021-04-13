@@ -137,6 +137,8 @@ jobs:
       drop2name: 'drop30'
 
 # Windows-specific
+# These jobs have to be run after all other jobs to avoid unix agents trying to dowlnoad something
+# from file shares
 - job:
   displayName: 'Windows don`t store permissions'
   pool:
