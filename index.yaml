@@ -135,6 +135,15 @@ jobs:
     parameters:
       drop1name: 'drop29'
       drop2name: 'drop30'
+- job:
+  displayName: 'Normalize paths'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './normalizePaths.yaml'
+    parameters:
+      drop1name: 'drop27-1'
+      drop2name: 'drop28-1'
 
 # Windows-specific
 # These jobs have to be run after all other jobs to avoid unix agents trying to dowlnoad something
@@ -182,3 +191,12 @@ jobs:
     parameters:
       drop1name: 'drop39'
       drop2name: 'drop40'
+- job:
+  displayName: 'Normalize paths'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './normalizePaths.yaml'
+    parameters:
+      drop1name: 'drop41'
+      drop2name: 'drop42'
