@@ -193,8 +193,7 @@ jobs:
       drop2name: 'drop40'
 - job:
   displayName: 'Normalize paths'
-  pool:
-    vmImage: ubuntu-18.04
+  pool: Windows
   steps:
   - template: './normalizePaths.yaml'
     parameters:
