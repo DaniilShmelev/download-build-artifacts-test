@@ -144,6 +144,14 @@ jobs:
     parameters:
       drop1name: 'drop27-1'
       drop2name: 'drop28-1'
+- job:
+  displayName: 'Clean destination folder'
+  pool:
+    vmImage: ubuntu-18.04
+  steps:
+  - template: './cleanDestinationFolder.yaml'
+    parameters:
+      drop1name: 'drop27-3'
 
 # Windows-specific
 # These jobs have to be run after all other jobs to avoid unix agents trying to dowlnoad something
