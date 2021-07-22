@@ -21,13 +21,13 @@ steps:
     ArtifactName: ${{ parameters.drop2name }}
     publishLocation: 'FilePath'
     TargetPath: 'D:/artifacts'
-- task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
+- task: DownloadBuildArtifactsM@${{ variables.taskVersion }}
   inputs:
     buildType: 'current'
     downloadType: 'single'
     artifactName: ${{ parameters.drop1name }}
     downloadPath: 'artifacts'
-- task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
+- task: DownloadBuildArtifactsM@${{ variables.taskVersion }}
   inputs:
     buildType: 'current'
     downloadType: 'single'

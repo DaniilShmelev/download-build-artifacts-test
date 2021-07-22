@@ -3,6 +3,10 @@ parameters:
   type: number
   default: 1
 
+variables:
+- name: taskVersion
+  value: ${{ parameters.taskVersion }}
+
 jobs:
 
 # Generic jobs
