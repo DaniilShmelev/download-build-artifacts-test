@@ -1,6 +1,5 @@
 parameters:
 - name: taskVersion
-- name: taskVersion
   type: number
   default: 1
 
@@ -22,7 +21,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop3'
       drop2name: 'drop4'
 - job:
@@ -32,7 +31,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop5'
       drop2name: 'drop6'
 - job:
@@ -42,7 +41,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop7'
       drop2name: 'drop8'
 - job:
@@ -52,7 +51,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop9'
       drop2name: 'drop10'
 - job:
@@ -62,7 +61,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop11'
       drop2name: 'drop12'
 - job:
@@ -72,7 +71,7 @@ jobs:
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop13'
       drop2name: 'drop14'
 - job:
@@ -82,7 +81,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop15'
       drop2name: 'drop16'
 
@@ -94,7 +93,7 @@ jobs:
   steps:
   - template: './showWarning.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop17'
       drop2name: 'drop18'
 - job:
@@ -103,7 +102,7 @@ jobs:
   steps:
   - template: './showWarning.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop19'
       drop2name: 'drop20'
 
@@ -115,7 +114,7 @@ jobs:
   steps:
   - template: './multipleTars.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop21'
       drop2name: 'drop22'
 - job:
@@ -125,7 +124,7 @@ jobs:
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop23'
       drop2name: 'drop24'
 - job:
@@ -134,7 +133,7 @@ jobs:
   steps:
   - template: './multipleTars.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop25'
       drop2name: 'drop26'
 - job:
@@ -144,7 +143,7 @@ jobs:
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop27'
       drop2name: 'drop28'
 - job:
@@ -153,7 +152,7 @@ jobs:
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop29'
       drop2name: 'drop30'
 - job:
@@ -163,7 +162,7 @@ jobs:
   steps:
   - template: './normalizePaths.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop27-1'
       drop2name: 'drop28-1'
 - job:
@@ -173,7 +172,7 @@ jobs:
   steps:
   - template: './cleanDestinationFolder.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop27-3'
 
 # Windows-specific
@@ -186,7 +185,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop31'
       drop2name: 'drop32'
 - job:
@@ -195,7 +194,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop33'
       drop2name: 'drop34'
 - job:
@@ -205,7 +204,7 @@ jobs:
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop35'
       drop2name: 'drop36'
 - job:
@@ -215,7 +214,7 @@ jobs:
   steps:
   - template: './specificFiles.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop37'
       drop2name: 'drop38'
 - job:
@@ -224,7 +223,7 @@ jobs:
   steps:
   - template: './filePath.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop39'
       drop2name: 'drop40'
 - job:
@@ -233,6 +232,6 @@ jobs:
   steps:
   - template: './normalizePaths.yaml'
     parameters:
-      taskVersion: ${{ parameters.taskVersion }}:
+      taskVersion: ${{ parameters.taskVersion }}
       drop1name: 'drop41'
       drop2name: 'drop42'
