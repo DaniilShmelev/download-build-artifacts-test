@@ -27,14 +27,14 @@ steps:
 - bash: rm -rf artifacts/someFile1.txt
 - bash: rm -rf artifacts/someDir
 
-- task: DownloadBuildArtifactsM@${{ parameters.version }}
+- task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
   inputs:
     buildType: 'current'
     downloadType: 'single'
     artifactName: ${{ parameters.drop1name }}
     downloadPath: 'artifacts'
     extractTars: false
-- task: DownloadBuildArtifactsM@${{ parameters.version }}
+- task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
   inputs:
     buildType: 'current'
     downloadType: 'single'

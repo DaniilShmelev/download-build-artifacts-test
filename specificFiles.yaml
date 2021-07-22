@@ -27,7 +27,7 @@ steps:
 - bash: rm -rf artifacts/someFile1.txt
 - bash: rm -rf artifacts/someDir
 
-- task: DownloadBuildArtifactsM@${{ parameters.version }}
+- task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
   inputs:
     buildType: 'current'
     downloadType: 'specific'
