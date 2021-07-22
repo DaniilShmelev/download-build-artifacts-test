@@ -13,7 +13,7 @@ jobs:
 - job:
   displayName: 'Celf-hosted Centos store permissions'
   pool: Centos
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
@@ -23,7 +23,7 @@ jobs:
 - job:
   displayName: 'Celf-hosted Centos don`t store permissions'
   pool: Centos
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -34,7 +34,7 @@ jobs:
   displayName: 'Ubuntu 16.04 store permissions'
   pool:
     vmImage: ubuntu-16.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
@@ -45,7 +45,7 @@ jobs:
   displayName: 'Ubuntu 16.04 don`t store permissions'
   pool:
     vmImage: ubuntu-16.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -56,7 +56,7 @@ jobs:
   displayName: 'Ubuntu 20.04 store permissions'
   pool:
     vmImage: ubuntu-20.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
@@ -67,7 +67,7 @@ jobs:
   displayName: 'Ubuntu 20.04 don`t store permissions'
   pool:
     vmImage: ubuntu-20.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -78,7 +78,7 @@ jobs:
   displayName: 'Macos store permissions'
   pool:
     vmImage: macos-latest
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './doStorePermissions.yaml'
     parameters:
@@ -89,7 +89,7 @@ jobs:
   displayName: 'Macos don`t store permissions'
   pool:
     vmImage: macos-latest
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -102,7 +102,7 @@ jobs:
   displayName: 'Show warning if no archives were found'
   pool:
     vmImage: ubuntu-18.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './showWarning.yaml'
     parameters:
@@ -112,7 +112,7 @@ jobs:
 - job:
   displayName: 'Show warning if no archives were found centos self-hosted'
   pool: Centos
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './showWarning.yaml'
     parameters:
@@ -125,7 +125,7 @@ jobs:
   displayName: 'Download multiple tars'
   pool:
     vmImage: ubuntu-20.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './multipleTars.yaml'
     parameters:
@@ -136,7 +136,7 @@ jobs:
   displayName: 'Download and extract multiple tars'
   pool:
     vmImage: ubuntu-18.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
@@ -146,7 +146,7 @@ jobs:
 - job:
   displayName: 'Download multiple tars centos self-hosted'
   pool: Centos
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './multipleTars.yaml'
     parameters:
@@ -157,7 +157,7 @@ jobs:
   displayName: 'Download and extract multiple tars'
   pool:
     vmImage: ubuntu-18.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
@@ -167,7 +167,7 @@ jobs:
 - job:
   displayName: 'Download and extract multiple tars self-hosted centos'
   pool: Centos
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './multipleTarsExtract.yaml'
     parameters:
@@ -178,7 +178,7 @@ jobs:
   displayName: 'Normalize paths'
   pool:
     vmImage: ubuntu-18.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './normalizePaths.yaml'
     parameters:
@@ -189,7 +189,7 @@ jobs:
   displayName: 'Clean destination folder'
   pool:
     vmImage: ubuntu-18.04
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './cleanDestinationFolder.yaml'
     parameters:
@@ -203,7 +203,7 @@ jobs:
   displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -213,7 +213,7 @@ jobs:
 - job:
   displayName: 'Windows self-hosted don`t store permissions'
   pool: Windows
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -224,7 +224,7 @@ jobs:
   displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -235,7 +235,7 @@ jobs:
   displayName: 'Windows download specific files'
   pool:
     vmImage: windows-latest
-  condition: ${{ runMsHostedJobs }}
+  condition: ${{ parameters.runMsHostedJobs }}
   steps:
   - template: './specificFiles.yaml'
     parameters:
@@ -245,7 +245,7 @@ jobs:
 - job:
   displayName: 'Windows self-hosted file share'
   pool: Windows
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './filePath.yaml'
     parameters:
@@ -255,7 +255,7 @@ jobs:
 - job:
   displayName: 'Normalize paths'
   pool: Windows
-  condition: ${{ runSelfHostedJobs }}
+  condition: ${{ parameters.runSelfHostedJobs }}
   steps:
   - template: './normalizePaths.yaml'
     parameters:
