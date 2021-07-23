@@ -3,8 +3,10 @@ parameters:
   type: number
   default: 1
 - name: runMsHostedJobs
+  type: boolean
   default: false
 - name: runSelfHostedJobs
+  type: boolean
   default: true
 
 jobs:
