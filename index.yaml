@@ -8,6 +8,9 @@ parameters:
 - name: runSelfHostedJobs
   type: boolean
   default: true
+- name: runWindowsJobs
+  type: boolean
+  default: false
 
 jobs:
 
@@ -205,7 +208,7 @@ jobs:
   displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
-  condition: ${{ parameters.runMsHostedJobs }}
+  condition: and( ${{ parameters.runMsHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -215,7 +218,7 @@ jobs:
 - job:
   displayName: 'Windows self-hosted don`t store permissions'
   pool: Windows
-  condition: ${{ parameters.runSelfHostedJobs }}
+  condition: and( ${{ parameters.runSelfHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -226,7 +229,7 @@ jobs:
   displayName: 'Windows don`t store permissions'
   pool:
     vmImage: windows-latest
-  condition: ${{ parameters.runMsHostedJobs }}
+  condition: and( ${{ parameters.runMsHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './dontStorePermissions.yaml'
     parameters:
@@ -237,7 +240,7 @@ jobs:
   displayName: 'Windows download specific files'
   pool:
     vmImage: windows-latest
-  condition: ${{ parameters.runMsHostedJobs }}
+  condition: and( ${{ parameters.runMsHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './specificFiles.yaml'
     parameters:
@@ -247,7 +250,7 @@ jobs:
 - job:
   displayName: 'Windows self-hosted file share'
   pool: Windows
-  condition: ${{ parameters.runSelfHostedJobs }}
+  condition: and( ${{ parameters.runSelfHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './filePath.yaml'
     parameters:
@@ -257,7 +260,7 @@ jobs:
 - job:
   displayName: 'Normalize paths'
   pool: Windows
-  condition: ${{ parameters.runSelfHostedJobs }}
+  condition: and( ${{ parameters.runSelfHostedJobs }}, ${{ parameters.runWindowsJobs }} )
   steps:
   - template: './normalizePaths.yaml'
     parameters:
