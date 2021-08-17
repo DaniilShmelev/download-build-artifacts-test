@@ -29,7 +29,7 @@ steps:
 - bash: rm -rf artifacts/someDir
 
 - bash: mkdir -p artifacts/extracted_tars/${{ parameters.drop1name }}
-- bash: echo "some content 1" > artifacts/extracted_tars/${{ parameters.drop1name }}/someFile1.txt
+- bash: echo "some1" > artifacts/extracted_tars/${{ parameters.drop1name }}/someFile1.txt
 
 - task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
   inputs:
