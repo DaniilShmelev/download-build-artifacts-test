@@ -11,6 +11,9 @@ parameters:
 - name: runWindowsJobs
   type: boolean
   default: false
+- name: replace
+  type: boolean
+  default: false
 
 jobs:
 
@@ -38,7 +41,7 @@ jobs:
 - job:
   displayName: 'Celf-hosted Centos store permissions and replace'
   pool: Centos
-  condition: ${{ parameters.runSelfHostedJobs }}
+  condition: or( ${{ parameters.runSelfHostedJobs }}, ${{ parameters.replace }} )
   steps:
   - template: './storeAndReplace.yaml'
     parameters:

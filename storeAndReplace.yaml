@@ -25,8 +25,11 @@ steps:
     StoreAsTar: true
 - bash: ls -lR artifacts
   displayName: 'File permissions before'
-# - bash: rm -rf artifacts/someFile1.txt
-# - bash: rm -rf artifacts/someDir
+- bash: rm -rf artifacts/someFile1.txt
+- bash: rm -rf artifacts/someDir
+
+- bash: mkdir -p artifacts/${{ parameters.drop1name }}
+- bash: echo "some content 1" > artifacts/${{ parameters.drop1name }}/someFile1.txt
 
 - task: DownloadBuildArtifactsM@${{ parameters.taskVersion }}
   inputs:
