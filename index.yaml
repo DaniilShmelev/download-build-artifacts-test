@@ -36,6 +36,16 @@ jobs:
       drop1name: 'drop3'
       drop2name: 'drop4'
 - job:
+  displayName: 'Celf-hosted Centos store permissions and replace'
+  pool: Centos
+  condition: ${{ parameters.runSelfHostedJobs }}
+  steps:
+  - template: './storeAndReplace.yaml'
+    parameters:
+      taskVersion: ${{ parameters.taskVersion }}
+      drop1name: 'drop31'
+      drop2name: 'drop32'
+- job:
   displayName: 'Ubuntu 16.04 store permissions'
   pool:
     vmImage: ubuntu-16.04
