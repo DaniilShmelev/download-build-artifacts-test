@@ -1,19 +1,19 @@
 parameters:
 - name: taskVersion
   type: number
-  default: 0
+  default: 1
 - name: runMsHostedJobs
   type: boolean
   default: false
 - name: runSelfHostedJobs
   type: boolean
-  default: false
+  default: true
 - name: runWindowsJobs
   type: boolean
   default: false
 - name: replace
   type: boolean
-  default: true
+  default: false
 
 jobs:
 
